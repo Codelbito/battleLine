@@ -1,0 +1,107 @@
+{"languajes": {
+    "es": {
+        "tactics": {
+            "mud": {
+                "title": "Barro",
+                "descr": "La batalla por esta carta ahora requiere cuatro cartas de cada zona de juego."
+            },
+            "fog": {
+                "title": "Niebla",
+                "descr": "Todas las formaciones de este Terreno se cancelan. La batalla se define por el valor total de las cartas de cada jugador."
+            },
+            "scout": {
+                "title": "Explorador",
+                "descr": "Elige un total de 3 cartas de los dos mazos de cartas. Luego devuelve dos cartas cualquiera de tu mano."
+            },
+            "traitor": {
+                "title": "Traidor",
+                "descr": "Se elige cualquier carta de Tropa del oponente, junto a un Terreno no reclamado. Colocalo en un espacio vacío de tu zona de juego."
+            },
+            "deserter": {
+                "title": "Deseertor",
+                "descr": "Elige cualquier carta de tropas o tácticas de la zona del oponente, junto a un Terreno no reclamado, y descartalo."
+            },
+            "redeploy": {
+                "title": "Redistribuir",
+                "descr": "Elegir cualquier carta de tropa o táctica de tu zona de juego junto a un Terreno no reclamado y muevelo a cualquier espacio vacio de tu zona de juego o descartalo."
+            },
+            "england_king": {
+                "title": "Rey de Inglaterra",
+                "descr": "Juega esta carta como cualquier carta de Tropa. Define su valor y su color. /n Cada jugador sólo puede jugar una caraa de Rey por partida."
+            },
+            "france_king": {
+                "title": "Rey de Francia",
+                "descr": "Juega esta carta como cualquier carta de Tropa. Define su valor y su color. /n Cada jugador sólo puede jugar una caraa de Rey por partida."
+            },
+            "shield_bearers": {
+                "title": "Tropas de apoyo",
+                "descr": "Juega esta carta como cualquier carta de Tropa de valor entre 1, 2 o 3 y elige su color."
+            },
+            "companion_cavalry": {
+                "title": "Mercenario de la Cábala",
+                "descr": "Juega esta carta como cualquier carta de Tropa de valor 8 y elige su color."
+            }
+        },
+        "battle_fields": {
+            "forest": {
+                "title": "Bosques",
+                "descr": "Para este campo de batalla se cancelan las foramaciones. Sume los valores de las cartas. El valor más alto es el vencedor."
+            },
+            "river": {
+                "title": "Río",
+                "descr": "Para ser reclamado este campo de batalla requiere 4 cartas con formaciones extendidas."
+            },
+            "castle": {
+                "title": "Castillo",
+                "descr": "El Atacanate debe jugar una carta más que el Defensor. La carta mayor del Atacante es ignorada."
+            },
+            "fortress":{
+                "title": "Fortaleza",
+                "descr": "El Atacanate debe jugar una carta más que el Defensor. La carta mayor del Atacante es ignorada."
+            },
+            "tower": {
+                "title": "Torre Vigía",
+                "descr": "Al reclamar la Torre retire una tropa del oponente en campo de batalla adyacente y sin reclamar."
+            },
+            "swamp": {
+                "title": "Ciénaga",
+                "descr": "Al reclamar este campo de batalla debe descartar una de sus tropas de un campo de batalla sin reclamar."
+            },
+            "village": {
+                "title": "Pueblo",
+                "descr": "El pueblo cuenta como 2 campos de batalla, pero no se considera adyacente a otro campo de batalla."
+            },
+            "hill": {
+                "title": "Colinas",
+                "descr": "Se invierten los valores de las tropas. (Las cartas de menor valor dorrotan a las de mayor valor en este campo de batalla.)"
+            },
+            "planes": {
+                "title": "Llanuras",
+                "descr": "Al reclamar este campo, toma 3 cartas de tropa. Luego devuelve 2 tropas al mazo."
+            }
+        },
+        "formations": {
+            "wedge": {
+                "title": "Cuña",
+                "descr": "Tres cartas de mismo color y valores consecutivos."
+            },
+            "phalax": {
+                "title": "Batallón",
+                "descr": "Tres cartas del mismo valor."
+            },
+            "batallion_order": {
+                "title": "Columna",
+                "descr": "Tres cartas del mismo color."
+            },
+            "skirmish_line": {
+                "title": "Falange",
+                "descr": "Tres cartas con valores consecutivos."
+            },
+            "host": {
+                "title": "Refriega",
+                "descr": "Cualquier otra formacion. (Se suman los valores)"
+            }
+        }
+        
+    }
+}}
