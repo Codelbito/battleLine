@@ -1,0 +1,23 @@
+{
+  "name": "battleLine",
+  "version": "1.0.0",
+  "description": "Battle Line clone",
+  "main": "models.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codelbito/battleLine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Codelbito/battleLine/issues"
+  },
+  "homepage": "https://github.com/Codelbito/battleLine#readme",
+  "dependencies": {
+    "enquirer": "^2.3.6"
+  }
+}
