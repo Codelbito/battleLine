@@ -2,7 +2,7 @@
   "name": "battleLine",
   "version": "1.0.0",
   "description": "Battle Line clone",
-  "main": "models.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
