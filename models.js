@@ -1,12 +1,15 @@
 class BattleField {
-  constructor(id, name) {
-    this.id = id;
-    this.name = name;
+  constructor(player, card) {
+    this.defender = player;
     this.attackerCards = [];
     this.defenderCards = [];
     this.claimedBy = null; // should be a Player || null
     this.resolved = false; // also determines draws. (solved ? claimedBy : false) ? true : the_field_is_a_draw
     this.resolve; //private method
+    this.addCard = function(){
+      console.log(this.name);
+      this.name === player ?  this.defenderCards.push(card) : this.attackerCards.push(card);
+    };
   }
   resolve = function () {
     //look for battle ground win condition when both players had played specified cards

@@ -1,5 +1,4 @@
 const { AutoComplete } = require("enquirer"); // DEPENDENCY !!!!!!
-const enquirer = require("enquirer");
 const cardInfo = require("./languague.conf.json"); // imports external static data to this JS & asigns it to a constant call "cardInfo"
 const {
   Board,
@@ -118,14 +117,17 @@ function getInterface(value, i) {
 function setGame() {
   var board = new Board(createDecks());
   var getOptions = function optionsMapper(array) {
-    return array.map((element) => element.view ? element.view : element);
-  }
+    return array.map((element) => (element.view ? element.view : element));
+  };
+  var menuOptions = getOptions(board.fieldsDeck.cards).sort(
+    (a, b) => 0.5 - Math.random()
+  ); //shuffle the battlefields
   async function gameLoop() {
-    var menuOptions = getOptions(board.fieldsDeck.cards);
     var fieldOptions = ["Jugar una TROPA", "Jugar una TACTICA", "Volver"];
-    
-    var PromptFieldOptions = getOptions(fieldOptions);
-    var promptMenuOptions = getOptions(board.fieldsDeck.cards)
+
+    //creates a new arrays to use in AutoComplete API
+    var PromptFieldOptions = [...fieldOptions];
+    var promptMenuOptions = [...menuOptions];
     let mainMenu = new AutoComplete({
       name: "Menu",
       message: `Turno del jugador ${board.player1.name}`,
@@ -150,13 +152,9 @@ function setGame() {
      * - if turn ends, player draw a card.
      */
     var selectionHandler = await mainMenu.run().then(async (userChoice) => {
-      console.log(1, userChoice);
       if (menuOptions.includes(userChoice)) {
         selectionHandler = await FieldsMenu.run().then((userChoice) => {
-          console.log(2, userChoice);
-
           if (fieldOptions.includes(userChoice)) {
-            console.log(2, userChoice);
             gameLoop();
           }
         });
