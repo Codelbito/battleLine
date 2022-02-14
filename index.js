@@ -1,4 +1,4 @@
-const { AutoComplete } = require("enquirer"); // DEPENDENCY !!!!!!
+const { Input, AutoComplete } = require("enquirer"); // DEPENDENCY !!!!!!
 const cardInfo = require("./languague.conf.json"); // imports external static data to this JS & asigns it to a constant call "cardInfo"
 const {
   Board,
@@ -116,6 +116,34 @@ function getInterface(value, i) {
 
 function setGame() {
   var board = new Board(createDecks());
+
+  /**
+   * TODO:
+   * players creation reafctor :/
+   */
+  const promptPlayer1 = new Input({
+    name: "player1",
+    message: "Ingrese el nombre del jugador 1",
+  });
+  const promptPlayer2 = new Input({
+    name: "player2",
+    message: "Ingrese el nombre del jugador 2",
+  });
+
+  promptPlayer1
+    .run()
+    .then((answer) => {
+      board.setPlayer(1, answer);
+      console.log("Player 1", answer);
+      promptPlayer2.run().then((answer) => {
+        board.setPlayer(2, answer);
+        console.log("Player 2", answer);
+
+        gameLoop();
+      });
+    })
+
+    .catch((error) => console.log(error));
   var getOptions = function optionsMapper(array) {
     return array.map((element) => (element.view ? element.view : element));
   };
@@ -163,7 +191,6 @@ function setGame() {
       }
     });
   }
-  gameLoop();
 }
 
 function init() {

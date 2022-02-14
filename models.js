@@ -57,11 +57,18 @@ class SemanticCard extends Card {
 
 class Board {
   constructor(decks) {
-    this.player1 = new Player(1, "Helbio");
-    this.player2 = new Player(2, "Helbito");
+    this.player1 = "";
+    this.player2 = "";
     this.troopsDeck = decks.troops;
     this.tacticsDeck = decks.tactics;
     this.fieldsDeck = decks.fields;
+    this.setPlayer = (id, userName)=>{
+      if(id === 1){
+        this.player1 = new Player(id, userName);
+      } else {
+        this.player2 = new Player(id, userName);
+      }
+    }
   }
 }
 class Player {
