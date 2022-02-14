@@ -33,6 +33,7 @@ function createTroops(cardId) {
       cardId++;
     }
   }
+  troopsDeck.shuffle();
   return troopsDeck;
 }
 
@@ -56,6 +57,7 @@ function createTactics(cardId) {
     );
     cardId++;
   }
+  tacticsDeck.shuffle();
   return tacticsDeck;
 }
 
@@ -78,6 +80,7 @@ function createFields(cardId) {
       )
     );
   }
+  fieldsDeck.shuffle();
   return fieldsDeck;
 }
 
@@ -137,8 +140,10 @@ function setGame() {
       console.log("Player 1", answer);
       promptPlayer2.run().then((answer) => {
         board.setPlayer(2, answer);
-        console.log("Player 2", answer);
-
+        for(let i = 0; i < 5; i++){
+          board.player1.take(board.troopsDeck.draw())
+          board.player2.take(board.troopsDeck.draw())
+        }
         gameLoop();
       });
     })
@@ -149,9 +154,7 @@ function setGame() {
     return array.map((element) => (element.view ? element.view : element));
   };
 
-  var menuOptions = getOptions(board.fieldsDeck.cards).sort(
-    (a, b) => 0.5 - Math.random()
-  ); //sort() => shuffle the battlefields
+  var menuOptions = getOptions(board.fieldsDeck.cards);
 
   async function gameLoop() {
     var fieldOptions = ["Jugar una TROPA", "Jugar una TACTICA", "Volver"];

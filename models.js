@@ -25,10 +25,13 @@ class Deck {
     this.add;
   }
   draw = function () {
-    //return 1 card
+    return this.cards ? this.cards.pop() : null;
   };
   add = function (card) {
     this.cards.push(card);
+  };
+  shuffle = function () {
+    this.cards.sort((a, b) => 0.5 - Math.random());
   };
 }
 
@@ -62,14 +65,14 @@ class Board {
     this.troopsDeck = decks.troops;
     this.tacticsDeck = decks.tactics;
     this.fieldsDeck = decks.fields;
-    this.setPlayer = (id, userName)=>{
-      if(id === 1){
+  }
+  setPlayer = function (id, userName) {
+    if (id === 1) {
         this.player1 = new Player(id, userName);
       } else {
         this.player2 = new Player(id, userName);
       }
-    }
-  }
+  };
 }
 class Player {
   constructor(id, username) {
@@ -79,6 +82,9 @@ class Player {
     this.isDefender = false; //if false, the player will be considere as attacker
     this.tacticsPlayed = [];
   }
+  take = function (cards) {
+    this.hand.push(cards);
+  };
 }
 
 /**
