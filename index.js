@@ -100,7 +100,7 @@ function createDecks() {
   updateCounter(tactics.cards.length);
   fields = createFields(cardsCount);
 
-  return (decks = { troops: troops, tactics: tactics, fields: fields });
+  return { troops: troops, tactics: tactics, fields: fields };
 }
 
 function getInterface(value, i) {
@@ -137,12 +137,11 @@ function setGame() {
     .run()
     .then((answer) => {
       board.setPlayer(1, answer);
-      console.log("Player 1", answer);
       promptPlayer2.run().then((answer) => {
         board.setPlayer(2, answer);
-        for(let i = 0; i < 5; i++){
-          board.player1.take(board.troopsDeck.draw())
-          board.player2.take(board.troopsDeck.draw())
+        for (let i = 0; i < 5; i++) {
+          board.player1.take(board.troopsDeck.draw());
+          board.player2.take(board.troopsDeck.draw());
         }
         gameLoop();
       });
@@ -159,9 +158,10 @@ function setGame() {
   async function gameLoop() {
     var fieldOptions = ["Jugar una TROPA", "Jugar una TACTICA", "Volver"];
 
-    //creates a new arrays to use in AutoComplete API
+    //duplicate arrays to use in AutoComplete API
     var PromptFieldOptions = [...fieldOptions];
     var promptMenuOptions = [...menuOptions];
+
     let mainMenu = new AutoComplete({
       name: "Menu",
       message: `Turno del jugador ${board.player1.name}`,
@@ -172,11 +172,6 @@ function setGame() {
       message: "Elije una opcion: ",
       choices: PromptFieldOptions,
     });
-    /**
-     * TODO:
-     * - create players.
-     * - deploy battleFields
-     */
 
     /**
      * TODO:
@@ -203,7 +198,6 @@ function init() {
   setGame();
   /**
    * TODO:
-   *  - randomize fields possitions on board
    *  - handle card draws for each player
    */
 }

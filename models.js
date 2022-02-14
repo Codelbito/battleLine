@@ -6,11 +6,12 @@ class BattleField {
     this.claimedBy = null; // should be a Player || null
     this.resolved = false; // also determines draws. (solved ? claimedBy : false) ? true : the_field_is_a_draw
     this.resolve; //private method
-    this.addCard = function(){
-      console.log(this.name);
-      this.name === player ?  this.defenderCards.push(card) : this.attackerCards.push(card);
-    };
   }
+  addCard = function () {
+    this.name === player
+      ? this.defenderCards.push(card)
+      : this.attackerCards.push(card);
+  };
   resolve = function () {
     //look for battle ground win condition when both players had played specified cards
   };
@@ -21,8 +22,6 @@ class BattleField {
 class Deck {
   constructor() {
     this.cards = [];
-    this.draw;
-    this.add;
   }
   draw = function () {
     return this.cards ? this.cards.pop() : null;
@@ -68,10 +67,10 @@ class Board {
   }
   setPlayer = function (id, userName) {
     if (id === 1) {
-        this.player1 = new Player(id, userName);
-      } else {
-        this.player2 = new Player(id, userName);
-      }
+      this.player1 = new Player(id, userName);
+    } else {
+      this.player2 = new Player(id, userName);
+    }
   };
 }
 class Player {
