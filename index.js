@@ -144,12 +144,15 @@ function setGame() {
     })
 
     .catch((error) => console.log(error));
+
   var getOptions = function optionsMapper(array) {
     return array.map((element) => (element.view ? element.view : element));
   };
+
   var menuOptions = getOptions(board.fieldsDeck.cards).sort(
     (a, b) => 0.5 - Math.random()
-  ); //shuffle the battlefields
+  ); //sort() => shuffle the battlefields
+
   async function gameLoop() {
     var fieldOptions = ["Jugar una TROPA", "Jugar una TACTICA", "Volver"];
 
