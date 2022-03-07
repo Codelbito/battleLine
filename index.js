@@ -1,12 +1,9 @@
 const { Input, AutoComplete } = require("enquirer"); // DEPENDENCY !!!!!!
 const cardInfo = require("./languague.conf.json"); // imports external static data to this JS & asigns it to a constant call "cardInfo"
-const {
-  Board,
-  NumericCard,
-  SemanticCard,
-  Deck,
-  BattleField,
-} = require("./models");
+const { Board } = require("./models/board");
+const { Deck } = require("./models/deck");
+const { BattleField } = require("./models/battleField");
+const { NumericCard, SemanticCard } = require("./models/card");
 
 function RulesHelper() {
   /**
@@ -156,10 +153,10 @@ function setGame() {
   var menuOptions = getOptions(board.fieldsDeck.cards);
 
   async function gameLoop() {
-    var fieldOptions = ["Jugar una TROPA", "Jugar una TACTICA", "Volver"];
+    var fieldOptions = ["Jugar una TROPA", "Jugar una TACTICA"];
 
     //duplicate arrays to use in AutoComplete API
-    var PromptFieldOptions = [...fieldOptions];
+    var PromptFieldOptions = [...fieldOptions, "Volver"];
     var promptMenuOptions = [...menuOptions];
 
     let mainMenu = new AutoComplete({
@@ -184,6 +181,7 @@ function setGame() {
       if (menuOptions.includes(userChoice)) {
         selectionHandler = await FieldsMenu.run().then((userChoice) => {
           if (fieldOptions.includes(userChoice)) {
+            console.log(userChoice);
             gameLoop();
           }
         });
@@ -196,10 +194,6 @@ function setGame() {
 
 function init() {
   setGame();
-  /**
-   * TODO:
-   *  - handle card draws for each player
-   */
 }
 
 function endTurn() {
