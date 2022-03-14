@@ -1,5 +1,5 @@
 const { Input, AutoComplete } = require("enquirer"); // DEPENDENCY !!!!!!
-const cardInfo = require("./languague.conf.json"); // imports external static data to this JS & asigns it to a constant call "cardInfo"
+const cardInfo = require("./language.conf.json"); // imports external static data to this JS & asigns it to a constant call "cardInfo"
 const { Board } = require("./models/board");
 const { Deck } = require("./models/deck");
 const { BattleField } = require("./models/battleField");
