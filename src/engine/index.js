@@ -5,6 +5,8 @@ const { Deck } = require("./models/deck");
 const { BattleField } = require("./models/battleField");
 const { NumericCard, SemanticCard } = require("./models/card");
 
+
+
 function RulesHelper() {
   /**
    * TODO:
@@ -101,7 +103,7 @@ function createDecks() {
 }
 
 function getInterface(value, i) {
-  let cardInterfaces = [
+  const cardInterfaces = [
     `|-a-|${value}|-a-|`,
     `|-b-|${value}|-b-|`,
     `|-c-|${value}|-c-|`,
