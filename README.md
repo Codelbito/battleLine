@@ -1,7 +1,11 @@
 # Battle Line
-Battle Line clone. <br />
-To start the game type next scripts on your repository local files root. <br />
+## Engine. <br />
+Type next scripts on your local repository engine folder. <br />
 ` npm i ` <br />
-` npm start ` <br />
 <br />
+<hr>
+
+## Console Game <br />
+To launch console game implementation run: <br />
+` npm start ` <br />
 Enjoy!
