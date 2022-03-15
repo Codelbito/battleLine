@@ -27,7 +27,7 @@ function createTroops(cardId) {
       let value = j + 1;
 
       troopsDeck.add(
-        new NumericCard(cardId, value, colors[i], getInterface(value, i))
+        new NumericCard(cardId, value, colors[i])
       );
       cardId++;
     }
@@ -50,8 +50,7 @@ function createTactics(cardId) {
       new SemanticCard(
         cardId,
         cardEffect,
-        cardTitle,
-        getInterface(cardTitle, 6)
+        cardTitle
       )
     );
     cardId++;
@@ -62,20 +61,19 @@ function createTactics(cardId) {
 
 function createFields(cardId) {
   let fieldsDeck = new Deck(),
-    fieldsIndo = cardInfo.es.battle_fields;
+    fieldsInfo = cardInfo.es.battle_fields;
 
   for (let j = 0; j < 9; j++) {
     let value = j + 1;
 
-    let cardTitle = fieldsIndo[value].title;
-    let cardEffect = fieldsIndo[value].descr;
+    let cardTitle = fieldsInfo[value].title;
+    let cardEffect = fieldsInfo[value].descr;
 
     fieldsDeck.add(
       new SemanticCard(
         cardId,
         cardEffect,
-        cardTitle,
-        getInterface(cardTitle, 7)
+        cardTitle
       )
     );
   }
