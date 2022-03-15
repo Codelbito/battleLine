@@ -100,20 +100,6 @@ function createDecks() {
   return { troops: troops, tactics: tactics, fields: fields };
 }
 
-function getInterface(value, i) {
-  const cardInterfaces = [
-    `|-a-|${value}|-a-|`,
-    `|-b-|${value}|-b-|`,
-    `|-c-|${value}|-c-|`,
-    `|-d-|${value}|-d-|`,
-    `|-e-|${value}|-e-|`,
-    `|-f-|${value}|-f-|`,
-    `|>@<|${value}|>@<|`,
-    `|###|${value}|###|`,
-  ];
-  return cardInterfaces[i];
-}
-
 function setGame() {
   var board = new Board(createDecks());
 
