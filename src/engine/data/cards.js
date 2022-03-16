@@ -205,3 +205,8 @@ const FORMATIONS = {
     },
   },
 };
+
+module.exports.Troops = TROOPS
+module.exports.Tactics = TACTICS
+module.exports.BattleFields = BATTLE_FIELDS
+module.exports.Formations = FORMATIONS

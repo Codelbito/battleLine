@@ -4,8 +4,7 @@ const { Board } = require("./models/board");
 const { Deck } = require("./models/deck");
 const { BattleField } = require("./models/battleField");
 const { NumericCard, SemanticCard } = require("./models/card");
-
-
+const { Troops, Tactics, BattleFields, Formations } = require("./data/cards");
 
 function RulesHelper() {
   /**
@@ -19,19 +18,11 @@ function RulesHelper() {
    */
 }
 
-function createTroops(cardId) {
-  let troopsDeck = new Deck(),
-    colors = ["black", "pink", "blue", "green", "red", "brown"];
-  for (let i = 0; i < 6; i++) {
-    for (let j = 0; j < 10; j++) {
-      let value = j + 1;
-
-      troopsDeck.add(
-        new NumericCard(cardId, value, colors[i])
-      );
-      cardId++;
-    }
-  }
+function createTroops() {
+  let troopsDeck = new Deck();
+  Troops.forEach(element => {
+    troopsDeck.add(new NumericCard(element.id, element.value, element.color))
+  });
   troopsDeck.shuffle();
   return troopsDeck;
 }
@@ -46,13 +37,7 @@ function createTactics(cardId) {
     let cardTitle = tacticsInfo[value].title;
     let cardEffect = tacticsInfo[value].descr;
 
-    tacticsDeck.add(
-      new SemanticCard(
-        cardId,
-        cardEffect,
-        cardTitle
-      )
-    );
+    tacticsDeck.add(new SemanticCard(cardId, cardEffect, cardTitle));
     cardId++;
   }
   tacticsDeck.shuffle();
@@ -69,13 +54,7 @@ function createFields(cardId) {
     let cardTitle = fieldsInfo[value].title;
     let cardEffect = fieldsInfo[value].descr;
 
-    fieldsDeck.add(
-      new SemanticCard(
-        cardId,
-        cardEffect,
-        cardTitle
-      )
-    );
+    fieldsDeck.add(new SemanticCard(cardId, cardEffect, cardTitle));
   }
   fieldsDeck.shuffle();
   return fieldsDeck;
