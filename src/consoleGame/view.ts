@@ -1,4 +1,4 @@
-const cardInterfaces = {
+export const cardInterfaces = {
   troop: {
     green: "|-a-|_VALUE_|-a-|",
     blue: "|-b-|_VALUE_|-b-|",
@@ -10,5 +10,3 @@ const cardInterfaces = {
   tactic: "|>@<|_VALUE_|>@<|",
   battleField: "|###|_VALUE_|###|",
 };
-
-module.exports.CardInterfaces = cardInterfaces;

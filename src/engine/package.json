@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Codelbito/battleLine#readme",
   "dependencies": {
     "enquirer": "^2.3.6"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
   }
 }

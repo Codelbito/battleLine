@@ -1,4 +1,9 @@
-const TROOPS = [
+interface Troop {
+  id: number;
+  color: 'pink' | 'green' | 'brown' | 'blue' | 'red' | 'black';
+  value: number;
+}
+export const TROOPS: Troop[] = [
   { id: 1, color: "pink", value: 1 },
   { id: 2, color: "pink", value: 2 },
   { id: 3, color: "pink", value: 3 },
@@ -60,7 +65,13 @@ const TROOPS = [
   { id: 59, color: "black", value: 9 },
   { id: 60, color: "black", value: 10 },
 ];
-const TACTICS = [
+interface SemanticCard {
+  id: number;
+  title: string;
+  descr: string;
+  effect: string;
+}
+export const TACTICS: SemanticCard[] = [
   {
     id: 61,
     title: "title_MUD",
@@ -123,7 +134,7 @@ const TACTICS = [
   },
 ];
 
-const BATTLE_FIELDS = [
+export const BATTLE_FIELDS: SemanticCard[] = [
   {
     id: 71,
     title: "title_FOREST",
@@ -180,7 +191,7 @@ const BATTLE_FIELDS = [
   },
 ];
 
-const FORMATIONS = {
+export const FORMATIONS = {
   id: 80,
   algo: {
     wedge: {
@@ -201,12 +212,7 @@ const FORMATIONS = {
     },
     host: {
       title: "title_HOST",
-      descr: "descr_HOSTF",
+      descr: "descr_HOST",
     },
   },
 };
-
-module.exports.Troops = TROOPS
-module.exports.Tactics = TACTICS
-module.exports.BattleFields = BATTLE_FIELDS
-module.exports.Formations = FORMATIONS
